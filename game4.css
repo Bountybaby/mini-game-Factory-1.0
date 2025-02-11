@@ -1,0 +1,60 @@
+/* 设置页面基本样式 */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, rgba(0, 128, 255, 0.8), rgba(0, 255, 255, 0.5));
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.game-container {
+    position: relative;
+    width: 80vw;
+    height: 80vh;
+}
+
+#gameCanvas {
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    background-color: #1d1d1d;
+    display: block;
+}
+
+/* 粒子效果 */
+@keyframes backgroundTransition {
+    0% {
+        background: linear-gradient(45deg, rgba(0, 128, 255, 0.8), rgba(0, 255, 255, 0.5));
+    }
+    50% {
+        background: linear-gradient(45deg, rgba(255, 0, 255, 0.8), rgba(255, 0, 0, 0.5));
+    }
+    100% {
+        background: linear-gradient(45deg, rgba(0, 128, 255, 0.8), rgba(0, 255, 255, 0.5));
+    }
+}
+
+body {
+    animation: backgroundTransition 10s ease-in-out infinite;
+}
+
+/* 敌人闪烁动画 */
+@keyframes enemyHit {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.enemy.hit {
+    animation: enemyHit 0.5s ease-in-out;
+}
